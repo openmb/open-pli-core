@@ -152,7 +152,7 @@ PKGV = "2.7+git${GITPKGV}"
 PR = "r49"
 
 ENIGMA2_BRANCH ?= "master"
-SRC_URI = "git://git.code.sf.net/p/openpli/enigma2;protocol=git;branch=${ENIGMA2_BRANCH}"
+SRC_URI = "git://github.com/openmb/stb-gui.git;protocol=git;branch=${ENIGMA2_BRANCH}"
 
 S = "${WORKDIR}/git"
 

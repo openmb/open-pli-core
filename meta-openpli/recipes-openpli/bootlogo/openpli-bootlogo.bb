@@ -24,6 +24,7 @@ SRC_URI = " \
 	file://bootlogo.mvi \
 	file://switchoff.mvi \
 	file://bootlogo.sh \
+	file://splash.bin \
 	"
 
 BINARY_VERSION = "1.3"
@@ -67,6 +68,8 @@ do_install() {
 	done;
 	install -d ${D}/${sysconfdir}/init.d
 	install -m 0755 ${S}/bootlogo.sh ${D}/${sysconfdir}/init.d/bootlogo
+	
+	install -m 0644 splash.bin ${DEPLOY_DIR_IMAGE}/splash.bin
 }
 
 pkg_preinst_${PN}_dreambox() {
