@@ -149,7 +149,7 @@ inherit gitpkgv pythonnative
 
 PV = "2.7+git${SRCPV}"
 PKGV = "2.7+git${GITPKGV}"
-PR = "r49"
+PR = "r50"
 
 ENIGMA2_BRANCH ?= "master"
 SRC_URI = "git://github.com/openmb/stb-gui.git;protocol=git;branch=${ENIGMA2_BRANCH}"
@@ -172,6 +172,8 @@ FILES_enigma2-fonts = "${datadir}/fonts"
 
 EXTRA_OECONF = "\
 	--with-libsdl=no --with-boxtype=${MACHINE} \
+	--with-machinebrand="${MACHINE_BRAND}" \
+	--with-machinename="${MACHINE_NAME}" \
 	--enable-dependency-tracking \
 	${@base_contains("MACHINE_FEATURES", "textlcd", "--with-textlcd" , "", d)} \
 	${@base_contains("MACHINE_FEATURES", "colorlcd", "--with-colorlcd" , "", d)} \
