@@ -2,7 +2,7 @@ DESCRIPTION = "Utils for DVB-C blindscan"
 SECTION = "base"
 PRIORITY = "optional"
 LICENSE = "CLOSED"
-RDEPENDS = "ncurses"
+RDEPENDS_${PN} = "ncurses"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 INIDVBCBIN = "tda1002x"
