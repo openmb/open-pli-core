@@ -1,7 +1,6 @@
 DESCRIPTION = "rtmpdump Real-Time Messaging Protocol"
 
-require conf/license/license-gplv2.inc
-
+require conf/license/openpli-gplv2.inc
 
 DEPENDS = "openssl"
 
