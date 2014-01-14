@@ -44,8 +44,6 @@ ENIGMA2_PLUGINS = " \
 	enigma2-plugin-extensions-pictureplayer \
 	enigma2-plugin-extensions-ppanel \
 	\
-	enigma2-plugin-extensions-iptvlistupdater \
-	\
 	enigma2-plugin-pli-softcamsetup \
 	\
 	enigma2-plugin-systemplugins-fastscan \
@@ -58,7 +56,7 @@ ENIGMA2_PLUGINS = " \
 	enigma2-plugin-systemplugins-videomode \
 	enigma2-plugin-systemplugins-videotune \
 	\
-	enigma2-plugin-systemplugins-crossepg \	
+	enigma2-plugin-systemplugins-crossepg \
 	\
 	${@base_contains("MACHINE_FEATURES", "3dtv", "enigma2-plugin-systemplugins-osd3dsetup" , "", d)} \
 	${@base_contains("MACHINE_FEATURES", "dvb-c", "enigma2-plugin-systemplugins-cablescan" , "", d)} \
