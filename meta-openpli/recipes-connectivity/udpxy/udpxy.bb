@@ -4,7 +4,7 @@ SECTION = "multimedia"
 PRIORITY = "optional"
 LICENSE = "GPLv2"
 
-require conf/license/license-gplv2.inc
+require conf/license/openpli-gplv2.inc
 
 inherit gitpkgv
 SRCREV = "${AUTOREV}"
