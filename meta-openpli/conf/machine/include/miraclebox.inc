@@ -33,7 +33,7 @@ IMAGE_CMD_ubi_prepend = " \
 	"
 TARGET_FPU = "hard"
 
-MACHINE_FEATURES += "3dtv alsa hdmicec switchoff wifi 3dtvpli bootsplash kernelwifi extrakernelwifi externalwifi"
+MACHINE_FEATURES += "3dtv alsa hdmicec switchoff wifi 3dtvpli bootsplash kernelwifi externalwifi"
 
 BOOTLOGO_FILENAME = "splash.bin"
 
