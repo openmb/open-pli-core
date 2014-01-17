@@ -1,4 +1,4 @@
-PRINC = "50"
+PRINC = "51"
 
 inherit pythonnative
 
@@ -41,7 +41,7 @@ python do_package_prepend () {
         ('gbquadplus', 'gbquad.jpg', 'gigablue_black.png'),
         ('gb800seplus', 'gb800seplus.jpg', 'gigablue_new.png'),
         ('gb800ueplus', 'gb800ueplus.jpg', 'gigablue_new.png'),
-        ('ventonhdx', 'ini-3000.jpg', 'ini-3000.png'),
+        ('mbtwin', 'ini-3000.jpg', 'ini-3000.png'),
         ('mbmini', 'ini-3000.jpg', 'ini-3000.png'),
         ('inihdp', 'ini-3000.jpg', 'ini-3000.png'),
         ('xp1000', 'xp1000.jpg', 'xp_rc14_normal.png'),
