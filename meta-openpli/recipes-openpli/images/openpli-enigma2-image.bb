@@ -103,6 +103,7 @@ ENIGMA2_OPTIONAL = " \
 IMAGE_INSTALL += " \
 	aio-grab \
 	enigma2 \
+	oe-alliance-branding \
 	libavahi-client \
 	settings-autorestore \
 	tuxbox-common \
