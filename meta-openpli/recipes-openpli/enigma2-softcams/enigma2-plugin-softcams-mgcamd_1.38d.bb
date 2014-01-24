@@ -1,13 +1,13 @@
-DESCRIPTION = "mgcamd ${PV} softcam"
+DESCRIPTION = "mgcamd 1.38c softcam"
 CAMNAME = "mgcamd"
 
 RDEPENDS_${PN} = "libcrypto-compat"
 
 PR = "r6"
 
-SRC_URI = "http://openmb.net/source/mgcamd${PV}.zip"
+SRC_URI = "http://openmb.net/source/mgcamd1.38c.zip"
 
-S = "${WORKDIR}/mgcamd${PV}"
+S = "${WORKDIR}/mgcamd1.38c"
 
 INHIBIT_PACKAGE_STRIP = "1"
 
