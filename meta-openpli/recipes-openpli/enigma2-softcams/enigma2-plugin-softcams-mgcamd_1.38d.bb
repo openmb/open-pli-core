@@ -1,9 +1,7 @@
 DESCRIPTION = "mgcamd ${PV} softcam"
 CAMNAME = "mgcamd"
 
-RDEPENDS_${PN} = "libcrypto-compat"
-
-PR = "r7"
+PR = "r8"
 
 SRC_URI = "http://168.144.9.19/source/mgcamd${PV}.zip"
 
@@ -17,6 +15,7 @@ require softcam.inc
 
 do_install() {
 	install -d ${D}/usr/lib
+	nstall -m 0644 ${S}/libcrypto.so.0.9.7 ${D}/usr/lib/libcrypto.so.0.9.7
 	
 	install -d ${D}/usr/bin
 	install -m 0755 ${S}/mgcamd.mips ${D}/usr/bin/mgcamd
@@ -34,5 +33,5 @@ do_install() {
 FILES_${PN} += "/usr/keys"
 FILES_${PN} += "/usr/lib"
 
-SRC_URI[md5sum] = "7bd64396bf439376aed4f2434c85ed07"
-SRC_URI[sha256sum] = "64436fab6891aec47a300806f080c36716bc86917e23a6f021f264dd08828519"
+SRC_URI[md5sum] = "e05685f39cc2bfddeea8f322ff6e8ca0"
+SRC_URI[sha256sum] = "03865d8acb346bed2c3e6c20973bb06c41c7d674898ced71544572cbdb0c3200"
