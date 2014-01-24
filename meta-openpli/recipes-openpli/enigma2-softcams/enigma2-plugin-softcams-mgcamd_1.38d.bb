@@ -1,13 +1,13 @@
-DESCRIPTION = "mgcamd 1.38c softcam"
+DESCRIPTION = "mgcamd ${PV} softcam"
 CAMNAME = "mgcamd"
 
 RDEPENDS_${PN} = "libcrypto-compat"
 
-PR = "r6"
+PR = "r7"
 
-SRC_URI = "http://openmb.net/source/mgcamd1.38c.zip"
+SRC_URI = "http://168.144.9.19/source/mgcamd${PV}.zip"
 
-S = "${WORKDIR}/mgcamd1.38c"
+S = "${WORKDIR}/mgcamd${PV}"
 
 INHIBIT_PACKAGE_STRIP = "1"
 
@@ -17,7 +17,6 @@ require softcam.inc
 
 do_install() {
 	install -d ${D}/usr/lib
-	install -m 0644 ${S}/libcrypto.so.0.9.7 ${D}/usr/lib/libcrypto.so.0.9.7
 	
 	install -d ${D}/usr/bin
 	install -m 0755 ${S}/mgcamd.mips ${D}/usr/bin/mgcamd
@@ -35,5 +34,5 @@ do_install() {
 FILES_${PN} += "/usr/keys"
 FILES_${PN} += "/usr/lib"
 
-SRC_URI[md5sum] = "68b51f73092c617d07a44fa154936dcb"
-SRC_URI[sha256sum] = "d7b7845e21de475c116e42c525effd3cc4952552233fa661e4087053a2ff2939"
+SRC_URI[md5sum] = "7bd64396bf439376aed4f2434c85ed07"
+SRC_URI[sha256sum] = "64436fab6891aec47a300806f080c36716bc86917e23a6f021f264dd08828519"
