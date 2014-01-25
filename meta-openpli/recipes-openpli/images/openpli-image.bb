@@ -9,7 +9,6 @@ IMAGE_INSTALL = " \
 	cifs \
 	distro-feed-configs \
 	dropbear \
-	libcrypto-compat \
 	e2fsprogs-e2fsck \
 	e2fsprogs-mke2fs \
 	e2fsprogs-tune2fs \
