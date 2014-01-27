@@ -13,7 +13,7 @@ PACKAGES += " ${PN}-src"
 SRCREV = "${AUTOREV}"
 PV = "1.6+git${SRCPV}"
 PKGV = "1.6+git${GITPKGV}"
-PR = "r0"
+PR = "r1"
 
 SRC_URI="git://github.com/oe-alliance/branding-module.git;protocol=git"
 
@@ -26,7 +26,7 @@ EXTRA_OECONF = " \
     STAGING_LIBDIR=${STAGING_LIBDIR} \
     --with-oever=${DISTRO_VERSION} \    
     --with-distro=${DISTRO_NAME} \
-    --with-boxtype=${MACHINEBUILD} \
+    --with-boxtype=${MACHINE} \
     --with-machineoem="${MACHINE}" \
     --with-machinebrand="${MACHINE_BRAND}" \
     --with-machinename="${MACHINE_NAME}" \
