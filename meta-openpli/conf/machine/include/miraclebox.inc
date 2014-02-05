@@ -1,5 +1,7 @@
 include conf/machine/include/openpli.inc
 
+BRAND_OEM = "ini"
+
 DVBPROVIDER = "kernel"
 
 MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS = "\
