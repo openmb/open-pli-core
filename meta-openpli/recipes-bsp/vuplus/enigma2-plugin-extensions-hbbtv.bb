@@ -7,7 +7,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=c9e255efa454e0155c1fd758df7dcaf3"
 SRCREV			= "HEAD"
 PV				= "experimental-git${SRCPV}"
 PKGV			= "experimental-git${GITPKGV}"
-PR				= "r13"
+PR				= "r14"
 BRANCH			= "vuplus_experimental"
 RDEPENDS_${PN}	= "vuplus-opera-browser vuplus-hbbtv-dumpait"
 FILES_${PN}		= "/usr/lib/enigma2/python/Plugins/Extensions/HbbTV/* \
@@ -18,6 +18,7 @@ PACKAGES		= "${PN}"
 
 SRC_URI = "git://code.vuplus.com/git/dvbapp.git;protocol=http;branch=${BRANCH};tag=${SRCREV} \
 	file://hbbtv-zdf.patch;striplevel=1 \
+	file://move-youtube-menu-entry.patch;striplevel=1 \
 "
 
 S = "${WORKDIR}/git"
@@ -36,4 +37,9 @@ do_install() {
 	cp -av ${S}/lib/python/Plugins/Extensions/HbbTV/locale/*.po ${D}/usr/lib/enigma2/python/Plugins/Extensions/HbbTV/locale
 
 	python -O -m compileall ${D}/usr/lib/enigma2/python/Plugins/
+
+}
+
+do_install_append() {
+	rm -rf ${D}/usr/src
 }
