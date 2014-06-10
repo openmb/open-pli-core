@@ -1,4 +1,5 @@
-include conf/machine/include/openpli.inc
+# We know about rtc
+MACHINE_FEATURES_BACKFILL_CONSIDERED = "rtc"
 
 BRAND_OEM = "ini"
 
