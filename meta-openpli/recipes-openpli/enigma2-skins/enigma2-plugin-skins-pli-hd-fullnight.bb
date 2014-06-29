@@ -1,20 +1,21 @@
-DESCRIPTION = "PLi HD skin"
+DESCRIPTION = "PLi HD FullNight skin"
 MAINTAINER = "littlesat"
 LICENSE = "Proprietary"
-LIC_FILES_CHKSUM = "file://usr/share/enigma2/PLi-HD/skin.xml;beginline=3;endline=8;md5=1d560d35b9194281a488eb3a32d9c8bf"
+LIC_FILES_CHKSUM = "file://usr/share/enigma2/PLi-HD-FullNight/skin.xml;beginline=3;endline=8;md5=2c71d0de3954aab943a5eccb0fe4dd04"
 
 inherit gitpkgv
 
 PV = "0.1+git${SRCPV}"
 PKGV = "0.1+git${GITPKGV}"
-PR = "r1"
+PR = "r0"
 PACKAGE_ARCH = "all"
 
-SRC_URI = "git://github.com/littlesat/skin-PLiHD.git;protocol=git"
+SRC_URI = "git://github.com/littlesat/PLi-HD-FullNight.git;protocol=git"
 
 FILES_${PN} = "/usr/share/enigma2/"
 
 RDEPENDS_${PN} = "font-valis-hd"
+
 S = "${WORKDIR}/git"
 
 do_compile() {
