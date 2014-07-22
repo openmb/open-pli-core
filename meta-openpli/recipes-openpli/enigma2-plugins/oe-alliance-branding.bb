@@ -6,14 +6,14 @@ DEPENDS = "python"
 
 require conf/license/openpli-gplv2.inc
 
-inherit gitpkgv autotools pythonnative
+inherit gitpkgv autotools-brokensep pythonnative
 
 PACKAGES += " ${PN}-src"
 
 SRCREV = "${AUTOREV}"
 PV = "2.2+git${SRCPV}"
 PKGV = "2.2+git${GITPKGV}"
-PR = "r0"
+PR = "r1"
 
 SRC_URI="git://github.com/oe-alliance/branding-module.git;protocol=git"
 
