@@ -10,10 +10,10 @@ PR = "r6"
 SRC_URI = "git://github.com/oe-alliance/oe-alliance-plugins.git;protocol=git \
 	file://01-compile-out-of-tree.patch;striplevel=1 \
 "
-SRCREV = "c25b354a26c397724b9db7ca10859dd86972f559"
+SRCREV = "560beca22c109dc7d40962874ac945ce9e3d5e5f"
 S = "${WORKDIR}/git/LCD4linux"
 
-inherit gitpkgv autotools
+inherit gitpkgv autotools-brokensep
 
 do_install_append() {
 	rm -rf "${D}/usr/share"
