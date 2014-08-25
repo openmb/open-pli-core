@@ -25,7 +25,6 @@ SRC_URI += " \
 		file://0007-v4l2_readd-obsolete-define-V4L2_CID_HCENTER-and-V4L2_CID_VCEN.patch \
 		${@base_contains('MACHINE_FEATURES', 'legacykernel', 'file://v4l-compile-fix-old-kernel.patch', '', d)} \
 		file://mp4-parse-fix-typo.patch \
-		file://0003-remove-V4L2_CID_HCENTER-V4L2_CID_VCENTER-usage.patch \
 "
 
 inherit autotools pkgconfig gettext git-project
