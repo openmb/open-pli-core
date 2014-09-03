@@ -38,8 +38,8 @@ MACHINE_FEATURES += "3dtv alsa hdmicec switchoff wifi 3dtvpli bootsplash kernelw
 
 BOOTLOGO_FILENAME = "splash.bin"
 
-PREFERRED_PROVIDER_virtual/blindscan-dvbc = "ini-blindscan-dvbc-utils"
-PREFERRED_PROVIDER_virtual/blindscan-dvbs = "ini-blindscan-dvbs-utils"
+PREFERRED_PROVIDER_virtual/blindscan-dvbc = "ini-blindscan-utils"
+PREFERRED_PROVIDER_virtual/blindscan-dvbs = "ini-blindscan-utils"
 
 require conf/machine/include/tune-mips32.inc
 
