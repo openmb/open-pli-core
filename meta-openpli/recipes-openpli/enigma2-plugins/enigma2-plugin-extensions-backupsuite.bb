@@ -11,9 +11,9 @@ S = "${WORKDIR}/git"
 SRC = "${S}/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite"
 DEST = "${D}/usr/lib/enigma2/python/Plugins/Extensions/BackupSuite"
 
-PV = "1.0+git${SRCPV}"
-PKGV = "1.0+git${GITPKGV}"
-PR = "r1"
+PV = "20+git${SRCPV}"
+PKGV = "20+git${GITPKGV}"
+PR = "r0"
 
 RDEPENDS_${PN} = "mtd-utils mtd-utils-ubifs ofgwrite"
 
