@@ -1,7 +1,7 @@
 DESCRIPTION = "mgcamd ${PV} softcam"
 CAMNAME = "mgcamd"
 
-PR = "r9"
+PR = "r10"
 
 SRC_URI = "http://168.144.9.19/source/mgcamd${PV}.zip"
 
