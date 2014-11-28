@@ -1,7 +1,7 @@
 DESCRIPTION = "mgcamd ${PV} softcam"
 CAMNAME = "mgcamd"
 
-PR = "r10"
+PR = "r11"
 
 SRC_URI = "http://168.144.9.19/source/mgcamd${PV}.zip"
 
@@ -13,9 +13,10 @@ CAMSTART = "sleep 3 ; start-stop-daemon -S -b -x /usr/bin/${CAMNAME}"
 
 require softcam.inc
 
+#install -m 0644 ${S}/libcrypto.so.0.9.7 ${D}/usr/lib/libcrypto.so.0.9.7
+
 do_install() {
 	install -d ${D}/usr/lib
-	install -m 0644 ${S}/libcrypto.so.0.9.7 ${D}/usr/lib/libcrypto.so.0.9.7
 	
 	install -d ${D}/usr/bin
 	install -m 0755 ${S}/mgcamd.mips ${D}/usr/bin/mgcamd
