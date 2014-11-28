@@ -8,8 +8,10 @@ if ! [ "$(cat /proc/stb/info/boxtype)" == 'ini-1000sv' ] || [ "$(cat /proc/stb/i
 	BOOTLOGO=/usr/share/enigma2/box.mvi
 	/usr/bin/showiframe ${BOOTLOGO}
 	sleep 5
-	flash_erase /dev/mtd/2 0 0
-	flash_erase /dev/mtd/4 0 0
+	flash_erase /dev/mtd2 0 0
+	flash_erase /dev/mtd4 0 0
+	sync
+	nandwrite -p /dev/mtd4 /usr/share/enigma2/splashbox.bin
 	sync
 	reboot -f
 else
