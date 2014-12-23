@@ -11,7 +11,7 @@ else
 	/usr/bin/showiframe ${BOOTLOGO}
 	flash_erase /dev/mtd2 0 0
 	flash_erase /dev/mtd4 0 0
-	flash_erase /dev/mtd3 0 0
+	#flash_erase /dev/mtd3 0 0
 	sync
 	nandwrite -p /dev/mtd4 /usr/share/enigma2/splashbox.bin
 	sync
