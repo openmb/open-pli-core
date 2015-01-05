@@ -150,7 +150,7 @@ inherit gitpkgv pythonnative
 
 PV = "2.7+git${SRCPV}"
 PKGV = "2.7+git${GITPKGV}"
-PR = "r50"
+PR = "r51"
 
 ENIGMA2_BRANCH ?= "master"
 SRC_URI = "git://github.com/openmb/stb-gui.git;protocol=git;branch=${ENIGMA2_BRANCH}"
