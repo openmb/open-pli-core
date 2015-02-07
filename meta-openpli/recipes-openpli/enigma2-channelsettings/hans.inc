@@ -4,7 +4,9 @@ PV = "1.0+git${SRCPV}"
 PKGV = "1.0+git${GITPKGV}"
 PR = "r0"
 
-SRC_URI = "git://github.com/haroo/HansSettings.git;protocol=git"
+SRCREV = "64ccb9bbef1253abc8d1b608459ead78a63f5344"
+
+SRC_URI = "git://github.com/haroo/HansSettings.git"
 S = "${WORKDIR}/git"
 
 inherit gitpkgv allarch

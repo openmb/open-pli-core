@@ -62,6 +62,7 @@ OPTIONAL_PACKAGES += " \
 	${OPTIONAL_BSP_PACKAGES} \
 	"
 
+OPTIONAL_BSP_ENIGMA2_PACKAGES ?= ""
 ENIGMA2_OPTIONAL = " \
 	channelsettings-enigma2-meta \
 	enigma2-pliplugins \
@@ -69,7 +70,6 @@ ENIGMA2_OPTIONAL = " \
 	enigma2-plugin-extensions-ambx \
 	enigma2-plugin-extensions-dlnabrowser \
 	enigma2-plugin-extensions-dlnaserver \
-	enigma2-plugin-extensions-et-livestream \
 	enigma2-plugin-extensions-openuitzendinggemist \
 	enigma2-plugin-extensions-tuxcom \
 	enigma2-plugin-extensions-xmltvimport \
@@ -86,6 +86,7 @@ ENIGMA2_OPTIONAL = " \
 	dvb-usb-drivers-meta \
 	cdfs cdtextinfo \
 	meta-enigma2-dvdburn \
+	${OPTIONAL_BSP_ENIGMA2_PACKAGES} \
 	"
 
 DEPENDS += "${OPTIONAL_PACKAGES} ${ENIGMA2_OPTIONAL}"

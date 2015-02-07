@@ -1,7 +1,10 @@
-DESCRIPTION = "Enigma2 is an experimental, but useful framebuffer-based frontend for DVB functions"
+SUMMARY = "GUI frontend for Open Source Linux based receivers"
+DESCRIPTION = "Enigma2 is a framebuffer based frontend for DVB functions on Linux settop boxes"
 MAINTAINER = "OpenPLi team <info@openpli.org>"
 LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=751419260aa954499f7abaabaa882bbe"
+
+SRCREV = "${AUTOREV}"
 
 DEPENDS = " \
 	ethtool \
@@ -33,7 +36,6 @@ RRECOMMENDS_${PN} = " \
 	${GST_GOOD_RDEPS} \
 	${GST_BAD_RDEPS} \
 	${GST_UGLY_RDEPS} \
-	gst-plugin-libxt \
 	"
 
 PYTHON_RDEPS = " \
@@ -166,7 +168,7 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 inherit autotools pkgconfig
 
 PACKAGES =+ "enigma2-fonts"
-PV_enigma2-fonts = "2014.12.17"
+PV_enigma2-fonts = "2015.02.06"
 PR_enigma2-fonts = "r0"
 PKGV_enigma2-fonts = "${PV_enigma2-fonts}"
 PKGR_enigma2-fonts = "${PR_enigma2-fonts}"

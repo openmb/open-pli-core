@@ -20,8 +20,8 @@ inherit gitpkgv pythonnative pkgconfig
 
 PV = "experimental-git${SRCPV}"
 PKGV = "experimental-git${GITPKGV}"
-PR = "r10"
 
+SRCREV = "${AUTOREV}"
 SRC_URI="git://git.code.sf.net/p/openpli/plugins-enigma2"
 
 EXTRA_OECONF = " \
@@ -30,7 +30,6 @@ EXTRA_OECONF = " \
 	STAGING_INCDIR=${STAGING_INCDIR} \
 	STAGING_LIBDIR=${STAGING_LIBDIR} \
 	--without-debug \
-	${@base_contains("MACHINE_FEATURES", "tpm", "--with-tpm" , "", d)} \
 "
 
 CONFFILES_${PN} += "${sysconfdir}/enigma2/movietags"
