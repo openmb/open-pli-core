@@ -52,13 +52,11 @@ OPTIONAL_PACKAGES += " \
 	smbnetfs \
 	strace \
 	tcpdump \
-	tmux \
 	transmission \
 	udpxy \
 	vim \
 	xfsprogs \
 	zeroconf \
-	zram \
 	${OPTIONAL_BSP_PACKAGES} \
 	"
 
@@ -73,6 +71,7 @@ ENIGMA2_OPTIONAL = " \
 	enigma2-plugin-extensions-openuitzendinggemist \
 	enigma2-plugin-extensions-tuxcom \
 	enigma2-plugin-extensions-xmltvimport \
+	enigma2-plugin-extensions-modifyplifullhd \
 	enigma2-plugin-security-firewall \
 	enigma2-plugin-skins-pli-hd \
 	enigma2-plugin-skins-pli-hd-fullnight \
