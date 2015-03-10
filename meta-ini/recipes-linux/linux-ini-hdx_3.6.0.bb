@@ -50,9 +50,9 @@ SRC_URI += "http://code-ini.com/software/kernel/bcm7413-linux-${KV}-${SRCDATE}.t
     file://nfs-max-rwsize-8k.patch \
     "
 
-S = "${WORKDIR}/linux-${PV}"
-
 inherit kernel
+
+S = "${WORKDIR}/linux-${PV}"
 
 export OS = "Linux"
 KERNEL_OBJECT_SUFFIX = "ko"
@@ -61,11 +61,6 @@ KERNEL_IMAGETYPE = "vmlinux"
 KERNEL_IMAGEDEST = "/tmp"
 
 FILES_kernel-image = "${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}.gz"
-
-do_configure_prepend() {
-    oe_machinstall -m 0644 ${WORKDIR}/defconfig ${S}/.config
-    oe_runmake oldconfig
-}
 
 kernel_do_install_append() {
     ${STRIP} ${D}${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}-${KERNEL_VERSION}
