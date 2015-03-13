@@ -6,7 +6,7 @@ LIC_FILES_CHKSUM = "file://Makefile;md5=137c892e644370bd9573a3091781d8fa"
 
 inherit module
 
-PR = "r7"
+PR = "r8"
 
 MACHINE_KERNEL_PR_append = ".0"
 
@@ -15,6 +15,8 @@ SRC_URI = "http://code-ini.com/software/mirror/8723AE_8723AU_Linux_BT_20140623.t
 inherit module
 
 EXTRA_OEMAKE = "LINUX_SRC=${STAGING_KERNEL_DIR}"
+EXTRA_OEMAKE += "KERNEL_SRC=${STAGING_KERNEL_DIR}"
+
 S = "${WORKDIR}/8723AE_8723AU_Linux_BT_20140623"
 
 FILES_${PN} = "${base_libdir}/firmware/"
