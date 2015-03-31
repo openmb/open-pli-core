@@ -14,10 +14,11 @@ SRCREV = "a1900c3e152085406ecb87c1962c55ec9c6e4016"
 
 PKGV = "2.4+git${GITPKGV}"
 PV = "2.4+git${SRCPV}"
-PR = "r4"
+PR = "r5"
 
-SRC_URI = "git://github.com/oe-alliance/rtmpdump.git;protocol=git"
-
+SRC_URI = "git://git.ffmpeg.org/rtmpdump;protocol=git \
+	file://0001-librtmp-set-timeout-for-send-operations-too.patch;striplevel=2 \
+"
 S = "${WORKDIR}/git/librtmp"
 
 do_compile() {
