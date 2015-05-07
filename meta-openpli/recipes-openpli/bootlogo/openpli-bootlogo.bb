@@ -8,7 +8,7 @@ require conf/license/openpli-gplv2.inc
 RDEPENDS_${PN} += "showiframe"
 
 PV = "3.0"
-PR = "r27"
+PR = "r28"
 
 S = "${WORKDIR}/"
 
@@ -26,6 +26,7 @@ SRC_URI = " \
 	file://bootlogo.sh \
 	file://splash.bin \
 	"
+SRC_URI += "file://cfe.bmp file://finished.bmp file://imageversion.bmp file://kernel.bmp file://rootfs.bmp file://splash.bmp"
 
 BINARY_VERSION = "1.3"
 
@@ -71,6 +72,25 @@ do_install() {
 	
 	mkdir -p ${DEPLOY_DIR_IMAGE}
 	install -m 0644 ${S}/splash.bin ${DEPLOY_DIR_IMAGE}/splash.bin
+	
+	if [ -e cfe.bmp ]; then
+	    install -m 0644 cfe.bmp ${DEPLOY_DIR_IMAGE}/cfe.bmp
+	fi    
+	if [ -e finished.bmp ]; then
+	    install -m 0644 finished.bmp ${DEPLOY_DIR_IMAGE}/finished.bmp
+	fi     
+	if [ -e imageversion.bmp ]; then
+	    install -m 0644 imageversion.bmp ${DEPLOY_DIR_IMAGE}/imageversion.bmp
+	fi         
+	if [ -e kernel.bmp ]; then
+	    install -m 0644 kernel.bmp ${DEPLOY_DIR_IMAGE}/kernel.bmp
+	fi     
+	if [ -e rootfs.bmp ]; then
+	    install -m 0644 rootfs.bmp ${DEPLOY_DIR_IMAGE}/rootfs.bmp
+	fi         
+	if [ -e splash.bmp ]; then
+	    install -m 0644 splash.bmp ${DEPLOY_DIR_IMAGE}/splash.bmp
+	fi     
 }
 
 pkg_preinst_${PN}_dreambox() {
