@@ -1,5 +1,5 @@
 DESCRIPTION = "Configuration files for 3rd-party feeds"
-PR = "r2"
+PR = "r3"
 
 require conf/license/openpli-gplv2.inc
 
@@ -10,9 +10,9 @@ FEEDS = "3rd-party 3rd-party-${MACHINE}"
 
 do_compile() {
     [ ! -d ${S}/${sysconfdir}/opkg ] && mkdir -p ${S}/${sysconfdir}/opkg
-    for feed in ${FEEDS}; do
-        echo "src/gz ${DISTRO_FEED_PREFIX}-${feed} ${DISTRO_FEED_URI}/${feed}" > ${S}/${sysconfdir}/opkg/${feed}-feed.conf
-    done
+    echo "src/gz openpli-3rd-party http://downloads.pli-images.org/feeds/openpli-4/3rd-party" > ${S}/${sysconfdir}/opkg/${feed}-feed.conf
+    echo "src/gz openpli-3rd-party-et10000 http://downloads.pli-images.org/feeds/openpli-4/3rd-party-et10000" > ${S}/${sysconfdir}/opkg/${feed}-feed.conf
+    echo "src/gz openpli-3rdparty http://feeds.mynonpublic.com/5.0/inihdp/3rdparty" > ${S}/${sysconfdir}/opkg/3rdparty-feed.conf
 }
 do_install () {
         install -d ${D}${sysconfdir}/opkg
