@@ -1,0 +1,24 @@
+From f351a60a434e15a03610575af1ab21dc7293b00a Mon Sep 17 00:00:00 2001
+From: meo <lupomeo@hotmail.com>
+Date: Sat, 9 Nov 2013 00:40:20 +0100
+Subject: [PATCH] crossepglib.py: retun bh distro
+
+---
+ src/enigma2/python/crossepglib.py |    1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/enigma2/python/crossepglib.py b/src/enigma2/python/crossepglib.py
+index d0d797d..a187eae 100644
+--- a/src/enigma2/python/crossepglib.py
++++ b/src/enigma2/python/crossepglib.py
+@@ -11,6 +11,7 @@ import new
+ import _enigma
+ 
+ def getDistro():
++	return "BlackHole"
+ 	try:
+ 		from enigma import getDistro as e2_getDistro
+ 		return e2_getDistro()
+-- 
+1.7.9.5
+

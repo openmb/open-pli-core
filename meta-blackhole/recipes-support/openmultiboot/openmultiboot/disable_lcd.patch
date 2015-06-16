@@ -1,0 +1,44 @@
+diff --git a/src/omb_branding.c b/src/omb_branding.c
+index 20bfeb0..e5215ff 100644
+--- a/src/omb_branding.c
++++ b/src/omb_branding.c
+@@ -75,14 +75,14 @@ omb_device_item *omb_branding_read_info(const char* base_dir, const char *identi
+ 			pclose(fd);
+ 		}
+ 	
+-		if (strlen(name) == 0)
+-			strcpy(name, identifier);
++//		if (strlen(name) == 0)
++		strcpy(name, identifier);
+ 		
+-		item->label = malloc(strlen(name) + strlen(version) + 10);
++		item->label = malloc(strlen(name) + 10);
+ 		if (strcmp(identifier, "flash") == 0)
+-			sprintf(item->label, "%s %s (flash)", name, version);
++			sprintf(item->label, "%s", name);
+ 		else
+-			sprintf(item->label, "%s %s", name, version);
++			sprintf(item->label, "%s", name);
+ 	}
+ 	else {
+ 		item->label = malloc(strlen(settings_value) + 9);
+diff --git a/src/omb_main.c b/src/omb_main.c
+index 76f5eb5..80eb6ae 100644
+--- a/src/omb_main.c
++++ b/src/omb_main.c
+@@ -110,13 +110,13 @@ void omb_refresh_gui()
+ 	omb_clear_screen();
+ 	omb_lcd_clear();
+ 	
+-	omb_draw_lcd();
++//	omb_draw_lcd();
+ 	omb_draw_header();
+ 	omb_draw_timer();
+ 	omb_menu_render();
+ 	
+ 	omb_blit();
+-	omb_lcd_update();
++//	omb_lcd_update();
+ }
+ 
+ int omb_show_menu()

@@ -1,0 +1,68 @@
+diff --git a/common/cmm_wpa.c b/common/cmm_wpa.c
+index f5692dc..4670ffa 100644
+--- a/common/cmm_wpa.c
++++ b/common/cmm_wpa.c
+@@ -4050,7 +4050,7 @@ VOID WPAInstallSharedKey(
+ 		pSharedKey->CipherAlg = CIPHER_AES;
+ 	else
+ 	{
+-		DBGPRINT(RT_DEBUG_ERROR, ("%s : fails (IF/ra%d) \n", 
++		DBGPRINT(RT_DEBUG_ERROR, ("%s : fails (IF/wlan%d) \n", 
+ 										__FUNCTION__, BssIdx));	
+ 		return;
+ 	}
+@@ -4062,7 +4062,7 @@ VOID WPAInstallSharedKey(
+ 		/* Sanity check the length */
+ 		if ((GtkLen != LEN_WEP64) && (GtkLen != LEN_WEP128))
+ 		{
+-			DBGPRINT(RT_DEBUG_ERROR, ("%s : (IF/ra%d) WEP key invlaid(%d) \n", 
++			DBGPRINT(RT_DEBUG_ERROR, ("%s : (IF/wlan%d) WEP key invlaid(%d) \n", 
+ 										__FUNCTION__, BssIdx, GtkLen));	
+ 			return;
+ 		}
+@@ -4075,7 +4075,7 @@ VOID WPAInstallSharedKey(
+ 		/* Sanity check the length */
+ 		if (GtkLen < LEN_TK)
+ 		{
+-			DBGPRINT(RT_DEBUG_ERROR, ("%s : (IF/ra%d) WPA key invlaid(%d) \n", 
++			DBGPRINT(RT_DEBUG_ERROR, ("%s : (IF/wlan%d) WPA key invlaid(%d) \n", 
+ 										__FUNCTION__, BssIdx, GtkLen));	
+ 			return;
+ 		}
+diff --git a/include/rtmp_def.h b/include/rtmp_def.h
+index 9025630..81518f7 100644
+--- a/include/rtmp_def.h
++++ b/include/rtmp_def.h
+@@ -1473,8 +1473,8 @@
+ #define IS_OPMODE_AP(_x)		((_x)->OpMode == OPMODE_AP)
+ #define IS_OPMODE_STA(_x)		((_x)->OpMode == OPMODE_STA)
+ 
+-#define INF_MAIN_DEV_NAME		"ra"
+-#define INF_MBSSID_DEV_NAME		"ra"
++#define INF_MAIN_DEV_NAME		"wlan"
++#define INF_MBSSID_DEV_NAME		"wlan"
+ #define INF_WDS_DEV_NAME		"wds"
+ #define INF_APCLI_DEV_NAME		"apcli"
+ #define INF_MESH_DEV_NAME		"mesh"
+diff --git a/os/linux/rt_profile.c b/os/linux/rt_profile.c
+index f3e45dc..4e8eb3d 100644
+--- a/os/linux/rt_profile.c
++++ b/os/linux/rt_profile.c
+@@ -162,7 +162,7 @@ NDIS_STATUS	RTMPReadParametersHook(
+ 		for (i = 0; i < pAd->ApCfg.BssidNum; i++)
+ 		{
+ 			pAd->ApCfg.MBSSID[i].Hostapd=FALSE;
+-			DBGPRINT(RT_DEBUG_TRACE, ("Reset ra%d hostapd support=FLASE", i));
++			DBGPRINT(RT_DEBUG_TRACE, ("Reset wlan%d hostapd support=FLASE", i));
+ 			
+ 		}
+ #endif /*HOSTAPD_SUPPORT */
+@@ -255,7 +255,7 @@ VOID RtmpDrvSendWirelessEvent(
+ 		if (pAddr)
+ 			pBufPtr += sprintf(pBufPtr, "(RT2860) STA(%02x:%02x:%02x:%02x:%02x:%02x) ", PRINT_MAC(pAddr));				
+ 		else if (BssIdx < MAX_MBSSID_NUM(pAd))
+-			pBufPtr += sprintf(pBufPtr, "(RT2860) BSS(ra%d) ", BssIdx);
++			pBufPtr += sprintf(pBufPtr, "(RT2860) BSS(wlan%d) ", BssIdx);
+ 		else
+ 			pBufPtr += sprintf(pBufPtr, "(RT2860) ");
+ 
