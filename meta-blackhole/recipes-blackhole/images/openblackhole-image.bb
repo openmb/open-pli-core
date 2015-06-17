@@ -104,6 +104,9 @@ IMAGE_INSTALL += " \
 	tuxbox-common \
 	ntfs-3g \
 	libcrypto-compat \
+	\
+	python-shell python-compression python-json python-html python-textutils python-subprocess \
+	\
 	${ENIGMA2_PLUGINS} \
 	\
 	${@base_contains("MACHINE_FEATURES", "tpm", "tpmd", "", d)} \
