@@ -82,7 +82,7 @@ init: $(BBLAYERS) $(CONFFILES)
 
 image: init
 	@echo 'Building image for $(MACHINE)'
-	@. $(TOPDIR)/env.source && cd $(TOPDIR) && bitbake openblackhole-image && bitbake openblackhole-feed
+	@. $(TOPDIR)/env.source && cd $(TOPDIR) && bitbake -k openblackhole-image && bitbake -k openblackhole-feed
 
 update:
 	@echo 'Updating Git repositories...'
