@@ -42,6 +42,10 @@ if [ -f /proc/stb/info/boxtype ] ; then
 		TYPE=miraclebox
 		MODEL=mbminiplus
 		MTD=mtd2
+	elif [ "$(cat /proc/stb/info/boxtype)" == '7000S' ]; then
+		TYPE=miraclebox
+		MODEL=mbmicro
+		MTD=mtd2
 	elif [ "$(cat /proc/stb/info/boxtype)" == 'ini-1000sv' ]; then
 		TYPE=miraclebox
 		MODEL=mbmini

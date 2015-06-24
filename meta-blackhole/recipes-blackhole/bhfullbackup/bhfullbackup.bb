@@ -8,7 +8,7 @@ SRC_URI = " \
 	file://__init__.py file://plugin.py file://bh_backup_full.sh \
 "
 PV = "3.0"
-PR = "r10"
+PR = "r11"
 
 S = "${WORKDIR}/"
 
