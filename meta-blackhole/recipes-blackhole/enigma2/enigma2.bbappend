@@ -1,10 +1,13 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-PR .= "-bh9"
+PR .= "-bh10"
 
 RDEPENDS_${PN} += " \
 		bhfullbackup \
 		enigma2-plugin-extensions-openmultiboot \
+		enigma2-plugin-extensions-xmltvimport \
+		enigma2-plugin-extensions-epgsearch \
+		enigma2-plugin-extensions-epgimportfilter \
 	"
 
 ENIGMA2_BRANCH = "master"
