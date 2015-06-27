@@ -6,13 +6,13 @@ MAINTAINER = "Black Hole team"
 require conf/license/openblackhole-gplv2.inc
 
 SRC_URI = "file://Ncam_Ci.sh file://StartBhCam file://Delete_all_Crashlogs.sh file://Ifconfig.sh \
-	file://openvpn_script.sh file://client.confOff file://clientp2p.confOff file://server.confOff \
+	file://client.confOff file://clientp2p.confOff file://server.confOff \
 	file://serverp2p.conf file://openvpn.log file://ca.crt file://client1.crt file://client1.key \
 	file://client2.crt file://client2.key file://client3.crt file://client3.key file://dh1024.pem \
 	file://delite.key file://server.crt file://server.key \
 	file://Netstat.sh file://Uptime.sh file://inadyn file://inadyn_script.sh"
 
-PR = "r4"
+PR = "r5"
 
 FILES_${PN} = "/"
 
@@ -34,7 +34,7 @@ do_install() {
 	
 
 	install -d ${D}/usr/bin
-	for x in /inadyn inadyn_script.sh openvpn_script.sh StartBhCam; do
+	for x in /inadyn inadyn_script.sh StartBhCam; do
 		install -m 0755 ${WORKDIR}/$x ${D}/usr/bin/$x
 	done
 	
@@ -59,11 +59,11 @@ do_install() {
 	done
 	
 	install -d ${D}/etc/rc3.d
-	ln -s /usr/bin/openvpn_script.sh ${D}/etc/rc3.d/S40openvpn
+	ln -s /etc/init.d/openvpn ${D}/etc/rc3.d/S40openvpn
 	ln -s /usr/bin/inadyn_script.sh ${D}/etc/rc3.d/S40inadyn
 
 	install -d ${D}/etc/rc4.d
-	ln -s /usr/bin/openvpn_script.sh ${D}/etc/rc4.d/K40openvpn
+	ln -s /etc/init.d/openvpn ${D}/etc/rc4.d/K40openvpn
 	ln -s /usr/bin/inadyn_script.sh ${D}/etc/rc4.d/K40inadyn
 
 }
