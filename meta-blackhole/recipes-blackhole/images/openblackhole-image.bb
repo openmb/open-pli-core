@@ -18,7 +18,6 @@ KERNEL_WIFI_DRIVERS = " \
 	kernel-module-rtl8187 \
 	kernel-module-zd1211rw \
 	kernel-module-prism2-usb \
-	kernel-module-w35und \
 	kernel-module-hostap \
 	"
 
@@ -81,7 +80,7 @@ DVB_USB_DRIVERS = " \
 	enigma2-plugin-drivers-dvb-usb-em28xx \
 	enigma2-plugin-drivers-dvb-usb-dw2102 \
 	enigma2-plugin-drivers-dvb-usb-as102 \
-	enigma2-plugin-drivers-dvb-usb-it913x \
+	${@base_contains('PREFERRED_VERSION_linux-ceryon', '3.14.2', 'enigma2-plugin-drivers-dvb-usb-it913x', '', d)} \
 	enigma2-plugin-drivers-dvb-usb-pctv452e \
 	enigma2-plugin-drivers-dvb-usb-dtt200u \
 	enigma2-plugin-drivers-dvb-usb-rtl2832 \

@@ -31,6 +31,7 @@ BBLAYERS ?= \
 	$(CURDIR)/meta-hd \
 	$(CURDIR)/meta-ini \
 	$(CURDIR)/meta-ceryon \
+	$(CURDIR)/meta-broadmedia \
 	$(CURDIR)/meta-local
 
 CONFFILES = \
