@@ -41,6 +41,7 @@ ENIGMA2_PLUGINS = " \
 	enigma2-plugin-extensions-graphmultiepg \
 	enigma2-plugin-extensions-mediaplayer \
 	enigma2-plugin-extensions-mediascanner \
+	enigma2-plugin-extensions-moviecut \
 	enigma2-plugin-extensions-openwebif \
 	enigma2-plugin-extensions-pictureplayer \
 	enigma2-plugin-extensions-ppanel \
@@ -88,7 +89,6 @@ IMAGE_INSTALL += " \
 	tuxbox-common \
 	${ENIGMA2_PLUGINS} \
 	\
-	${@base_contains("MACHINE_FEATURES", "tpm", "tpmd", "", d)} \
 	${@base_contains("MACHINE_FEATURES", "transcoding", "streamproxy", "", d)} \
 	${@base_contains('MACHINE_FEATURES', 'ctrlrc', "enigma2-plugin-systemplugins-remotecontrolcode", "", d)} \
 	${@base_contains("MACHINE_FEATURES", "kernelwifi", "${KERNEL_WIFI_DRIVERS}", "", d)} \
