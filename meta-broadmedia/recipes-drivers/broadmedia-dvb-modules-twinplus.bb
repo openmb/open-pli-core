@@ -1,5 +1,5 @@
 KV = "3.17.8"
-SRCDATE = "20150911"
+SRCDATE = "20150914"
 
 require broadmedia-dvb-modules.inc
 
