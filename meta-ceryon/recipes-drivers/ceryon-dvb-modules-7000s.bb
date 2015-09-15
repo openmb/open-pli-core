@@ -5,8 +5,8 @@ LICENSE = "CLOSED"
 require conf/license/license-close.inc
 
 KV = "3.14.2"
-SRCDATE = "20150909"
+SRCDATE = "20150910"
 
 require ceryon-dvb-modules.inc
-SRC_URI[md5sum] = "e3c0f76875b61f58b733bd1b56a0671a"
-SRC_URI[sha256sum] = "399c3535f96aa7fb42f92e0ba7fdf7d7b1425a940cc5e81205c6375fccd042a6"
+SRC_URI[md5sum] = "b9fdeaee7a9065f062ddaf04d69b347f"
+SRC_URI[sha256sum] = "256b77033b1f0754a1a5639c4bac75706deed9dc2ece4578bdc1b96c03dd34f7"
