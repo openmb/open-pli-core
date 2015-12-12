@@ -1,10 +1,10 @@
 KV = "3.17.8"
-SRCDATE = "20151028"
+SRCDATE = "20151111"
 
 require broadmedia-dvb-modules.inc
 
 #SRC_URI = "file://twinplus-drivers-${KV}-${SRCDATE}.zip"
 SRC_URI = "http://source.mynonpublic.com/broadmedia/twinplus-drivers-${KV}-${SRCDATE}.zip"
 
-SRC_URI[md5sum] = "4bbdb5cede422421b426ddcf2edd41a3"
-SRC_URI[sha256sum] = "7429102ac1291aec0a7720c2641336404d1e69ccf1752bec3258f953bc18d166"
+SRC_URI[md5sum] = "ee33e0f7a588420e50b6b982b5327695"
+SRC_URI[sha256sum] = "a3f6c2b4564a6aa17f7bc7fd27d045f60328c1ee43d97b00a715d4c5c9e5ceac"
