@@ -18,7 +18,7 @@ include conf/machine/include/autoload-filesystems.inc
 DVBMEDIASINK_CONFIG = "--with-pcm"
 
 TARGET_ARCH = "mipsel"
-DEFAULTTUNE = "mips32el"
+DEFAULTTUNE ?= "mips32el"
 
 GLIBC_EXTRA_OECONF = "--with-tls --with-__thread"
 
@@ -32,7 +32,6 @@ IMAGE_CMD_ubi_prepend = " \
 	rm -rf ${IMAGE_ROOTFS}/boot/*; \
 	rm -rf ${IMAGE_ROOTFS}/tmp/*; \
 	"
-TARGET_FPU = "hard"
 
 MACHINE_FEATURES += "3dtv alsa hdmicec switchoff wifi 3dtvpli bootsplash kernelwifi"
 
