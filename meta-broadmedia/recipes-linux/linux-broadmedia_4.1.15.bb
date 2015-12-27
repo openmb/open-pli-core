@@ -2,13 +2,14 @@ SUMMARY = "Linux kernel for ${MACHINE}"
 SECTION = "kernel"
 LICENSE = "GPLv2"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
+SRC = "20151216"
 
 inherit kernel machine_kernel_pr
 
-KERNEL_RELEASE = "3.17.8"
+KERNEL_RELEASE = "4.1.15"
 
-SRC_URI[md5sum] = "7d2d52a4bc332c6a96ed3a8749c79a15"
-SRC_URI[sha256sum] = "a126e409ad7261fdfb59b65e3b3d53fc442b218eecd1db1de252bdde37c9570e"
+SRC_URI[md5sum] = "606f82d844aebcc8dbd36d6b9e8ffa8c"
+SRC_URI[sha256sum] = "94614db16c16b2b70880132840f25ed2caf168c7938a09b61d75f13f9883d11c"
 
 LIC_FILES_CHKSUM = "file://${WORKDIR}/linux-${PV}/COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
 
@@ -20,7 +21,7 @@ PKG_kernel-image = "kernel-image"
 RPROVIDES_kernel-base = "kernel-${KERNEL_VERSION}"
 RPROVIDES_kernel-image = "kernel-image-${KERNEL_VERSION}"
 
-SRC_URI += "http://source.mynonpublic.com/broadmedia/g300-linux-${PV}.tar.gz \
+SRC_URI += "http://source.mynonpublic.com/broadmedia/${MACHINE}-linux-${PV}-${SRC}.tar.xz \
     file://defconfig \
     "
 
@@ -50,4 +51,7 @@ pkg_postinst_kernel-image () {
         fi
     fi
     true
+}
+
+do_rm_work() {
 }
