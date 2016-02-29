@@ -30,6 +30,9 @@ BBLAYERS ?= \
 	$(CURDIR)/meta-xtrend \
 	$(CURDIR)/meta-formuler \
 	$(CURDIR)/meta-hd \
+	$(CURDIR)/meta-xpeedc \
+	$(CURDIR)/meta-wetek \
+	$(CURDIR)/meta-zgemma \
 	$(CURDIR)/meta-ini \
 	$(CURDIR)/meta-ceryon \
 	$(CURDIR)/meta-broadmedia \

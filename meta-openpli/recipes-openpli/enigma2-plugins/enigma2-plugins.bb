@@ -12,10 +12,12 @@ PACKAGES_DYNAMIC = "enigma2-plugin-(?!pli-).*"
 PACKAGES += "\
 	enigma2-plugin-extensions-mosaic \
 	enigma2-plugin-extensions-fancontrol2 \
+	enigma2-plugin-extensions-bonjour \
 	"
 RDEPENDS_enigma2-plugin-extensions-mosaic = "aio-grab"
 RDEPENDS_enigma2-plugin-extensions-fancontrol2 = "smartmontools hdparm"
 RDEPENDS_enigma2-plugin-systemplugins-blindscan = "virtual/blindscan-dvbs"
+RDEPENDS_enigma2-plugin-extensions-bonjour = "avahi-daemon"
 
 PROVIDES += "\
 	${@base_contains("MACHINE_FEATURES", "transcoding","enigma2-plugin-systemplugins-transcodingsetup","",d)} \
@@ -23,8 +25,8 @@ PROVIDES += "\
 
 inherit gitpkgv pythonnative pkgconfig
 
-PV = "experimental-git${SRCPV}"
-PKGV = "experimental-git${GITPKGV}"
+PV = "y-git${SRCPV}"
+PKGV = "y-git${GITPKGV}"
 
 SRCREV = "${AUTOREV}"
 GITHUB_URI ?= "git://github.com"
@@ -38,19 +40,29 @@ EXTRA_OECONF = " \
 	--without-debug \
 "
 
-CONFFILES_${PN} += "${sysconfdir}/enigma2/movietags"
-FILES_${PN} += " /usr/share/enigma2 /usr/share/fonts "
+# Main package should be empty
+FILES_${PN} = ""
+# But something makes the packages think they depend on it, so just
+# deliver an empty hulk for them.
+ALLOW_EMPTY_${PN} = "1"
+
+FILES_enigma2-plugin-extensions-movietagger += "${sysconfdir}/enigma2/movietags"
+CONFFILES_enigma2-plugin-extensions-movietagger += "${sysconfdir}/enigma2/movietags"
+
+FILES_enigma2-plugin-extensions-babelzapper += "${sysconfdir}/babelzapper"
+
+FILES_enigma2-plugin-extensions-netcaster += "${sysconfdir}/NETcaster.conf"
+CONFFILES_enigma2-plugin-extensions-netcaster += "${sysconfdir}/NETcaster.conf"
+
 FILES_${PN}-meta = "${datadir}/meta"
 PACKAGES += "${PN}-meta"
-PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 inherit autotools-brokensep
 
 S = "${WORKDIR}/git"
 
-DEPENDS = "enigma2 \
+DEPENDS = " \
 	python-pyopenssl \
-	python-gdata \
 	streamripper \
 	python-mutagen \
 	python-twisted \
