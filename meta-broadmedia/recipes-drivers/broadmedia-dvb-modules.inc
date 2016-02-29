@@ -7,8 +7,8 @@ require conf/license/license-close.inc
 PV = "${KV}+${SRCDATE}"
 PR = "r0"
 
-#SRC_URI = "file://twinplus-drivers-${KV}-${SRCDATE}.zip"
-SRC_URI = "http://source.mynonpublic.com/broadmedia/twinplus-drivers-${KV}-${SRCDATE}.zip"
+#SRC_URI = "file://twinplus-drivers-${KV}-${GCCREV}-${SRCDATE}.zip"
+SRC_URI = "http://source.mynonpublic.com/broadmedia/twinplus-drivers-${KV}-${GCCREV}-${SRCDATE}.zip"
 
 S = "${WORKDIR}"
 
