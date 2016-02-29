@@ -1,5 +1,5 @@
 ###############################################################################
-#                      FULL BACKUP UYILITY FOR  VU+                           #
+#                      FULL BACKUP UYILITY FOR  MIRACLEBOX                    #
 #        Tools original by scope34 with additions by Dragon48 & DrData        #
 #               modified by Pedro_Newbie (pedro.newbie@gmail.com)             #
 #                       modified by meo & dpeddi                              #
@@ -36,19 +36,23 @@ if [ -f /proc/stb/info/boxtype ] ; then
 		UBINIZE_ARGS="-m 4096 -p 1024KiB"
 	elif [ "$(cat /proc/stb/info/boxtype)" == 'ini-5000sv' ]; then
 		TYPE=miraclebox
-		MODEL=mbtwin
+		MODEL=twin
 		MTD=mtd2
 	elif [ "$(cat /proc/stb/info/boxtype)" == 'ini-2000sv' ]; then
 		TYPE=miraclebox
-		MODEL=mbminiplus
+		MODEL=miniplus
 		MTD=mtd2
 	elif [ "$(cat /proc/stb/info/boxtype)" == '7000S' ]; then
 		TYPE=miraclebox
 		MODEL=mbmicro
 		MTD=mtd2
+	elif [ "$(cat /proc/stb/info/boxtype)" == 'g300' ]; then
+		TYPE=miraclebox
+		MODEL=twinplus
+		MTD=mtd1
 	elif [ "$(cat /proc/stb/info/boxtype)" == 'ini-1000sv' ]; then
 		TYPE=miraclebox
-		MODEL=mbmini
+		MODEL=mini
 		MTD=mtd2
 	else
 		echo "No supported receiver found!"

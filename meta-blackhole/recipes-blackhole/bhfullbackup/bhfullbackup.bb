@@ -7,7 +7,7 @@ RDEPENDS_${PN} += "mtd-utils mtd-utils-ubifs enigma2"
 SRC_URI = " \
 	file://__init__.py file://plugin.py file://bh_backup_full.sh \
 "
-PV = "3.0"
+PV = "3.1"
 PR = "r11"
 
 S = "${WORKDIR}/"
