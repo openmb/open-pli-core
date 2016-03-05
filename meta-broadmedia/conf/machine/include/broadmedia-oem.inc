@@ -59,3 +59,4 @@ MACHINE_FEATURES += "alsa 3dtv switchoff hdmicec bootsplash omb skins1080"
 BOOTLOGO_FILENAME = "splash.bin"
 
 require conf/machine/include/tune-mips32.inc
+require conf/machine/include/miraclebox-wifi.inc
