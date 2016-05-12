@@ -6,7 +6,7 @@ DESCRIPTION = "OScam ${PV} Open Source Softcam"
 LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://COPYING;md5=d32239bcb673463ab874e80d47fae504"
 
-SRCREV = "11209"
+SRCREV = "11213"
 PV = "svn${SRCREV}"
 PKGV = "${PV}"
 SRC_URI = "svn://www.streamboard.tv/svn/oscam;protocol=http;module=trunk;scmdata=keep"
@@ -37,6 +37,7 @@ EXTRA_OECMAKE += "\
 	-DHAVE_LIBUSB=1 \
 	-DSTATIC_LIBUSB=1 \
 	-DWITH_SSL=1 \
+	-DIPV6SUPPORT=1 \
 	-DHAVE_PCSC=0"
 
 do_install() {
